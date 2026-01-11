@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
+import { commonStyles } from "../componentStyles";
 
 const tabs = [
 	{
@@ -54,17 +55,35 @@ const tabs = [
 	},
 ];
 
+const styles = {
+	section: commonStyles.section,
+	grid: commonStyles.grid2Cols.replace("md:grid-cols-2", "lg:grid-cols-2"), // Override specific class
+	tabButton: (isActive: boolean) =>
+		`text-left p-6 rounded-xl transition-all duration-300 border-l-4 ${
+			isActive
+				? "bg-base-200 border-primary shadow-sm"
+				: "bg-transparent border-transparent hover:bg-base-200/50"
+		}`,
+	tabTitle: (isActive: boolean) =>
+		`text-xl font-bold mb-2 ${isActive ? "text-primary" : "text-base-content"}`,
+	tabContent: "text-base-content/70 leading-relaxed",
+	imageContainer:
+		"h-full min-h-[400px] bg-base-200 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner",
+	imagePlaceholder:
+		"absolute inset-0 flex items-center justify-center text-base-content/20 font-bold text-2xl",
+};
+
 export default function Challenges() {
 	const [activeTab, setActiveTab] = useState(0);
 
 	return (
-		<section className="py-24">
+		<section className={styles.section}>
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.6 }}
-				className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+				className={styles.grid}
 			>
 				{/* Tabs Navigation */}
 				<div className="flex flex-col gap-4">
@@ -73,28 +92,18 @@ export default function Challenges() {
 							key={tab.id}
 							type="button"
 							onClick={() => setActiveTab(tab.id)}
-							className={`text-left p-6 rounded-xl transition-all duration-300 border-l-4 ${
-								activeTab === tab.id
-									? "bg-base-200 border-primary shadow-sm"
-									: "bg-transparent border-transparent hover:bg-base-200/50"
-							}`}
+							className={styles.tabButton(activeTab === tab.id)}
 						>
-							<h3
-								className={`text-xl font-bold mb-2 ${
-									activeTab === tab.id ? "text-primary" : "text-base-content"
-								}`}
-							>
+							<h3 className={styles.tabTitle(activeTab === tab.id)}>
 								{tab.title}
 							</h3>
-							<p className="text-base-content/70 leading-relaxed">
-								{tab.content}
-							</p>
+							<p className={styles.tabContent}>{tab.content}</p>
 						</button>
 					))}
 				</div>
 
 				{/* Tab Content (Image) */}
-				<div className="h-full min-h-[400px] bg-base-200 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner">
+				<div className={styles.imageContainer}>
 					<AnimatePresence mode="wait">
 						<motion.div
 							key={activeTab}
@@ -102,16 +111,12 @@ export default function Challenges() {
 							animate={{ opacity: 1, x: 0 }}
 							exit={{ opacity: 0, x: -20 }}
 							transition={{ duration: 0.3 }}
-							className="absolute inset-0 flex items-center justify-center text-base-content/20 font-bold text-2xl"
+							className={styles.imagePlaceholder}
 						>
 							{/* Placeholder for dynamic image based on tab */}
 							Image for: {tabs[activeTab].title}
 						</motion.div>
 					</AnimatePresence>
-					{/* 
-            You can dynamically change images here like this:
-            <img src={tabs[activeTab].imageUrl} alt={tabs[activeTab].title} className="object-cover w-full h-full" />
-          */}
 				</div>
 			</motion.div>
 		</section>
