@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 const tabs = [
@@ -58,7 +59,13 @@ export default function Challenges() {
 
 	return (
 		<section className="py-24">
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0 }}
+				viewport={{ once: true }}
+				transition={{ duration: 0.6 }}
+				className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+			>
 				{/* Tabs Navigation */}
 				<div className="flex flex-col gap-4">
 					{tabs.map((tab) => (
@@ -88,16 +95,25 @@ export default function Challenges() {
 
 				{/* Tab Content (Image) */}
 				<div className="h-full min-h-[400px] bg-base-200 rounded-2xl flex items-center justify-center relative overflow-hidden shadow-inner">
-					<div className="absolute inset-0 flex items-center justify-center text-base-content/20 font-bold text-2xl">
-						{/* Placeholder for dynamic image based on tab */}
-						Image for: {tabs[activeTab].title}
-					</div>
+					<AnimatePresence mode="wait">
+						<motion.div
+							key={activeTab}
+							initial={{ opacity: 0, x: 20 }}
+							animate={{ opacity: 1, x: 0 }}
+							exit={{ opacity: 0, x: -20 }}
+							transition={{ duration: 0.3 }}
+							className="absolute inset-0 flex items-center justify-center text-base-content/20 font-bold text-2xl"
+						>
+							{/* Placeholder for dynamic image based on tab */}
+							Image for: {tabs[activeTab].title}
+						</motion.div>
+					</AnimatePresence>
 					{/* 
             You can dynamically change images here like this:
             <img src={tabs[activeTab].imageUrl} alt={tabs[activeTab].title} className="object-cover w-full h-full" />
           */}
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 }
