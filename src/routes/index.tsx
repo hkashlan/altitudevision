@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Architecture from "@/components/Architecture";
 import Benefits from "@/components/Benefits";
 import Challenges from "@/components/Challenges";
+import DemoSection from "@/components/DemoSection";
 import Solutions from "@/components/Solutions";
 import UseCases from "@/components/UseCases";
 import Hero from "../components/Hero";
@@ -17,6 +19,8 @@ function App() {
 			<Solutions />
 			<Benefits />
 			<UseCases />
+			<Architecture />
+			<DemoSection />
 		</div>
 	);
 }
