@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",
     "motion": "^12.25.0",
-    "nitro": "latest",
+    "nitro": "npm:nitro-nightly@latest",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwind-merge": "^3.4.0",
