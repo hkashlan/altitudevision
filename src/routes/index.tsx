@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import Benefits from "@/components/Benefits";
 import Challenges from "@/components/Challenges";
 import Solutions from "@/components/Solutions";
+import UseCases from "@/components/UseCases";
 import Hero from "../components/Hero";
 import PainPoints from "../components/PainPoints";
 
@@ -15,6 +16,7 @@ function App() {
 			<Challenges />
 			<Solutions />
 			<Benefits />
+			<UseCases />
 		</div>
 	);
 }
