@@ -40,10 +40,10 @@ const useCases = [
 
 const styles = {
 	section: commonStyles.section,
-	headerContainer: commonStyles.sectionCentered + " mb-16",
+	headerContainer: `${commonStyles.sectionCentered} mb-16`,
 	eyebrow: commonStyles.eyebrow,
 	heading: commonStyles.heading,
-	subtitle: commonStyles.subtitle + " mx-auto",
+	subtitle: `${commonStyles.subtitle} mx-auto`,
 	grid: "grid grid-cols-1 md:grid-cols-2 gap-8",
 	card: "group relative overflow-hidden rounded-3xl h-[400px] flex transform transition-all duration-300 hover:scale-[1.02]",
 	cardContent:

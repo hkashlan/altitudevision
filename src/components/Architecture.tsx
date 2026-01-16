@@ -7,7 +7,7 @@ const styles = {
 	headerContainer: commonStyles.sectionCentered,
 	eyebrow: commonStyles.eyebrow,
 	heading: commonStyles.heading,
-	subtitle: commonStyles.subtitle + " mx-auto",
+	subtitle: `${commonStyles.subtitle} mx-auto`,
 	diagramContainer: "mt-16 w-full max-w-5xl mx-auto flex justify-center",
 	image:
 		"w-full h-auto max-w-[900px] object-contain drop-shadow-2xl rounded-2xl",

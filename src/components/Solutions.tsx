@@ -4,10 +4,10 @@ import { commonStyles } from "../componentStyles";
 
 const styles = {
 	section: commonStyles.section,
-	headerContainer: commonStyles.sectionCentered + " mb-16",
+	headerContainer: `${commonStyles.sectionCentered} mb-16`,
 	eyebrow: commonStyles.eyebrow,
-	heading: commonStyles.heading + " mb-6",
-	subtitle: commonStyles.subtitle + " mx-auto",
+	heading: `${commonStyles.heading} mb-6`,
+	subtitle: `${commonStyles.subtitle} mx-auto`,
 	grid: "grid grid-cols-1 md:grid-cols-3 gap-8",
 	card: commonStyles.card,
 	cardBody: "card-body items-center text-center",

@@ -2,11 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import Architecture from "@/components/Architecture";
 import Benefits from "@/components/Benefits";
 import Challenges from "@/components/Challenges";
+import Contact from "@/components/Contact";
 import DemoSection from "@/components/DemoSection";
+import FAQ from "@/components/FAQ";
+import Hero from "@/components/Hero";
+import PainPoints from "@/components/PainPoints";
+import PricingComparison from "@/components/PricingComparison";
 import Solutions from "@/components/Solutions";
 import UseCases from "@/components/UseCases";
-import Hero from "../components/Hero";
-import PainPoints from "../components/PainPoints";
 
 export const Route = createFileRoute("/")({ component: App });
 
@@ -21,6 +24,9 @@ function App() {
 			<UseCases />
 			<Architecture />
 			<DemoSection />
+			<PricingComparison />
+			<FAQ />
+			<Contact />
 		</div>
 	);
 }

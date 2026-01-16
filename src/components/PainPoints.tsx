@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { commonStyles } from "../componentStyles";
 
 const styles = {
-	section: commonStyles.sectionCentered + " py-24",
+	section: `${commonStyles.sectionCentered} py-24`,
 	eyebrow: commonStyles.eyebrow,
 	heading: commonStyles.heading,
-	subtitle: commonStyles.subtitle + " mx-auto",
+	subtitle: `${commonStyles.subtitle} mx-auto`,
 };
 
 export default function PainPoints() {
