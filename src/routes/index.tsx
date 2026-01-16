@@ -5,6 +5,7 @@ import Challenges from "@/components/Challenges";
 import Contact from "@/components/Contact";
 import DemoSection from "@/components/DemoSection";
 import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import PainPoints from "@/components/PainPoints";
 import PricingComparison from "@/components/PricingComparison";
@@ -27,6 +28,7 @@ function App() {
 			<PricingComparison />
 			<FAQ />
 			<Contact />
+			<Footer />
 		</div>
 	);
 }
