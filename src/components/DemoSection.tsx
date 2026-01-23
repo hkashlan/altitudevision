@@ -92,18 +92,23 @@ export default function DemoSection() {
 					</p>
 
 					<div className={styles.contactRow}>
-						<a href="mailto:contact@company.com" className={styles.contactItem}>
+						<a
+							href="mailto:sales@altitudevision.de"
+							className={styles.contactItem}
+						>
 							<img src={emailIcon} alt="Email" className={styles.contactIcon} />
 							<div>
 								<div className={styles.contactLabel}>Email:</div>
-								<div className={styles.contactValue}>contact@company.com</div>
+								<div className={styles.contactValue}>
+									sales@altitudevision.de
+								</div>
 							</div>
 						</a>
-						<a href="tel:(414)687-5892" className={styles.contactItem}>
+						<a href="tel:+4915773713196" className={styles.contactItem}>
 							<img src={phoneIcon} alt="Phone" className={styles.contactIcon} />
 							<div>
 								<div className={styles.contactLabel}>Phone:</div>
-								<div className={styles.contactValue}>(414) 687 - 5892</div>
+								<div className={styles.contactValue}>+49 157 73713196</div>
 							</div>
 						</a>
 					</div>

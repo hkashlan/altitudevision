@@ -1,5 +1,6 @@
 import { Monitor, Phone, Settings, Users } from "lucide-react";
 import { motion } from "motion/react";
+import mobileImg from "../assets/mobile.jpeg";
 import { commonStyles } from "../componentStyles";
 
 const features = [
@@ -92,13 +93,12 @@ export default function Benefits() {
 					transition={{ duration: 0.8 }}
 					className={styles.imageContainer}
 				>
-					<div className="relative">
-						{/* Placeholder for Phone Mockup */}
-						<div className="bg-base-300 w-[300px] h-[600px] rounded-[3rem] border-8 border-base-content/10 flex items-center justify-center shadow-2xl">
-							<span className="text-base-content/20 font-bold text-2xl">
-								App Interface
-							</span>
-						</div>
+					<div className="relative group">
+						<img
+							src={mobileImg}
+							alt="AltitudeVision Mobile App"
+							className="w-full h-full object-cover"
+						/>
 					</div>
 				</motion.div>
 

@@ -105,7 +105,7 @@ export default function Footer() {
 						</p>
 						<div className={styles.socialLinks}>
 							<SocialLink
-								href="https://linkedin.com"
+								href="https://www.linkedin.com/company/110656756"
 								icon={<Linkedin size={20} />}
 							/>
 							<SocialLink
