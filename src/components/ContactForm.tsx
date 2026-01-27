@@ -1,4 +1,5 @@
 import { useForm } from "@tanstack/react-form";
+import { useNavigate } from "@tanstack/react-router";
 import { useId } from "react";
 
 const styles = {
@@ -25,6 +26,7 @@ const styles = {
 
 export default function ContactForm() {
 	const sectionId = useId();
+	const navigate = useNavigate();
 	const form = useForm({
 		defaultValues: {
 			firstName: "",
@@ -38,7 +40,9 @@ export default function ContactForm() {
 		},
 		onSubmit: async ({ value }) => {
 			console.log(value);
-			alert("Vielen Dank! Ihre Nachricht wurde gesendet.");
+			// Simulate a short delay for better UX
+			await new Promise((resolve) => setTimeout(resolve, 800));
+			navigate({ to: "/thank-you" });
 		},
 	});
 

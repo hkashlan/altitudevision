@@ -1,3 +1,4 @@
+import { useNavigate } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
@@ -34,6 +35,7 @@ type PaymentMode = "ratenzahlung" | "vorauszahlung";
 
 export default function PricingComparison() {
 	const [mode, setMode] = useState<PaymentMode>("ratenzahlung");
+	const navigate = useNavigate();
 
 	return (
 		<section className={styles.section}>
@@ -133,6 +135,7 @@ export default function PricingComparison() {
 
 								<button
 									type="button"
+									onClick={() => navigate({ to: "/thank-you" })}
 									className={`${styles.button} ${plan.badge ? "btn-primary" : "btn-outline btn-primary"}`}
 								>
 									{plan.button_text}
